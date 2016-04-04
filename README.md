@@ -1,2 +1,2 @@
 # hydrogine
-light weight game engine - base on oxygine engiine
+light weight game engine - base on oxygine engine
