@@ -38,6 +38,13 @@ namespace Hydrogyne
 namespace Component
 {
 
+enum eAudioState
+{
+  PLAYING,
+  PAUSED,
+  STOPED,
+};
+
 // forward declaration
 class AudioInterface;
 class MusicData;

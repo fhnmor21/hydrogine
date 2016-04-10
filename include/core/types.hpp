@@ -23,36 +23,17 @@ SOFTWARE.
 */
 
 /**
-  * singleton routes commands to subscribers.
-  * the addresses for the commands are defined by their subscription key
+  * simple math utilities and
+  * data structs that are POD only
+  *
   */
 
-#ifndef CORE_COMMAND_DISPATCHER_HPP
-#define CORE_COMMAND_DISPATCHER_HPP
-
-#include "core/command_interface.hpp"
+#ifndef CORE_TYPES_HPP
+#define CORE_TYPES_HPP
 
 namespace Hydrogine
 {
 
-class CommandDispatcher
-{
-public:
-  ~CommandDispatcher();
-
-  CLASS_METHOD CommandDispatcher* instance();
-
-  ErrorCode subscribe(CommandType type, ICommandee* cmd);
-  ErrorCode unSubscribe(const CommandType type, const ICommandee* cmd);
-  void dispatch(const CommandMsg& msg);
-
-protected:
-  CommandDispatcher(CommandDispatcher&) = delete;
-  CommandDispatcher operator=(CommandDispatcher&) = delete;
-  CommandDispatcher();
-  GLOBAL HashMultiMap< CommandType, ICommandee* > subscribers;
-};
-
 } // end namespace Hydrogine
 
-#endif // CORE_COMMAND_DISPATCHER_HPP
+#endif // CORE_TYPES_HPP
